@@ -31,6 +31,11 @@ a,
 nav,
 .nav-links {
 display: flex;
+    background-image: url('../assets/background2.jpg'); /* coloque o caminho certo da imagem */
+    background-size: cover; /* cobre toda a tela */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; /* opcional: fixo mesmo com scroll */
 }
 
 nav {

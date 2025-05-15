@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Francisco Dôglas">
+    <meta name="description" content="Francisco Dôglas - QA Engineer Portfolio showcasing testing skills, experience and projects.">
+
     <title>My Portfolio</title>
 
     <!-- box icons -->
@@ -23,45 +26,55 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">contact</a>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
     <nav id="hamburger-nav">
         <div class="logo">Francisco Dôglas</div>
         <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
+            <div class="hamburger-icon" role="button" tabindex="0" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div class="menu-links">
-                <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">contact</a>
+            <div class="menu-links" id="menu-links">
+                <ul>
+                    <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                </ul>
             </div>
 
         </div>
     </nav>
     <section id="profile">
         <div class="section__pic-container">
-            <img src="./assets/profile-pic.png" alt="Doglas profile picture">
+            <img src="./assets/profile-pic.png" alt="Doglas profile picture" loading="lazy">
         </div>
         <div class="section__text">
             <p class="section__text__p1">Hello, I'm</p>
             <h1 class="title">Dôglas Silva</h1>
-            <P class="section__text__p2">QA Engineer</P>
+            <p class="section__text__p2">QA Engineer</P>
             <div class="btn-container">
                 <button class="btn btn-color-2" 
-                onclick="window.open('./assets/resume-example.pdf')">Download CV</button>
+                onclick="window.open('./assets/resume-example.pdf')"
+                aria-label="Download curriculum vitae in PDF"
+                >
+                Download CV
+            </button>
                 <button class="btn btn-color-1" 
-                onclick="location.href='./#contact'">Contact Info</button>
+                onclick="location.href='./#contact'"
+                aria-label="Navigate to contact section"
+                >
+                Contact Info
+            </button>
             </div>
             <div id="socials-container">
-                <img src="./assets/linkedin.png" alt="My Linkedin profile" class="icon" onclick="location.href='https://www.linkedin.com/in/franciscod%C3%B4glas/'">
-                <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/DoglasBSB'">
+                <img src="./assets/linkedin.png" alt="My Linkedin profile" class="icon" aria-label="Navigate to the LinkedIn social network"onclick="location.href='https://www.linkedin.com/in/franciscod%C3%B4glas/'">
+                <img src="./assets/github.png" alt="My Github profile" class="icon"  aria-label="Navigate to my github repository" onclick="location.href='https://github.com/DoglasBSB'">
             </div>
         </div>
     </section>  
@@ -105,28 +118,28 @@
                     <h2 class="experience-sub-title">QA/Tester</h2><br>
                     <div class="article-container">
                         <article>
-                            <img src="./assets//checkmark.png" alt="Experience icon" class="icon">
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
                                 <h3>Testes Funcionais</h3>
                                 <p>Experienced</p>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets//checkmark.png" alt="Experience icon" class="icon">
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
                                 <h3>Testes de Integração</h3>
                                 <p>Intermediate</p>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets//checkmark.png" alt="Experience icon" class="icon">
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
                                 <h3>Testes de API</h3>
                                 <p>Intermediate</p>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets//checkmark.png" alt="Experience icon" class="icon">
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
                                 <h3>Testes de UI</h3>
                                 <p>Experienced</p>
@@ -138,28 +151,28 @@
 
                     <div class="article-container">
                         <article>
-                            <img src="./assets//checkmark.png" alt="Experience icon" class="icon">
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
                                 <h3>Testes de Usabilidade</h3>
                                 <p>Intermediate</p>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets//checkmark.png" alt="Experience icon" class="icon">
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
                                 <h3>Testes de Regressão</h3>
                                 <p>Intermediate</p>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets//checkmark.png" alt="Experience icon" class="icon">
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
                                 <h3>Testes de Performance</h3>
                                 <p>Basic</p>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets//checkmark.png" alt="Experience icon" class="icon">
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
                                 <h3>Testes de Acessibilidade</h3>
                                 <p>Basic</p>
@@ -171,28 +184,28 @@
 
                     <div class="article-container">
                         <article>
-                            <img src="./assets//checkmark.png" alt="Experience icon" class="icon">
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
                                 <h3>Testes Exploratório</h3>
                                 <p>Experienced</p>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets//checkmark.png" alt="Experience icon" class="icon">
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
                                 <h3>Testes Automatizados</h3>
                                 <p>Intermediate</p>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets//checkmark.png" alt="Experience icon" class="icon">
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
                                 <h3>Testes Mobile</h3>
                                 <p>Basic</p>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets//checkmark.png" alt="Experience icon" class="icon">
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
                             <div>
                                 <h3>Testes de Segurança</h3>
                                 <p>Basic</p>
@@ -215,7 +228,10 @@
                     <img src="./assets/project-1.png" alt="Project 1" class="project-img">
                 </div>
                 <h2 class="experience-sub-title project-title">Project One</h2>
-                <div class="btn-container">
+                <p>
+                <div> TEXTO DESCRITIVO</div> 
+                <br>
+                <div class="btn-container">  
                     <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">GitHub</button>
                     <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">Live Demo</button>
                 </div>
@@ -270,7 +286,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">contact</a>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -278,7 +294,6 @@
       </footer>
       
         
-    </section>
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- typed js -->
