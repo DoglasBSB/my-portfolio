@@ -10,24 +10,19 @@ on:
       - main
 
 jobs:
-  run-bugbug-tests:
+  build-and-test:
     runs-on: ubuntu-latest
-    name: Run BugBug Tests
     steps:
-      - name: Checkout repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Run BugBug Cloud Runner
-        id: run-bugbug-tests
-        uses: bugbug-io/bugbug-github-action@v1.2.1
-        with:
-          apiToken: ${{ secrets.BUGBUG_API_TOKEN }}
-          testId: 08fb6a17-6aaf-4e87-b09e-dfcdf2f72c4b
+      - name: Install BugBug CLI
+        run:  npm install -g @testrevolution/bugbug-cli && \ bugbug config set-token \ 7061cec132069f98d8f4cbacd423de8d02ae551f
 
-      - name: Getting Run Output
-        run: |
-          echo "Suite Run ID: ${{ steps.run-bugbug-tests.outputs.suiteRunId }}"
-          echo "Test Run ID: ${{ steps.run-bugbug-tests.outputs.testRunId }}"
+      - name: Run BugBug Tests
+        run: bugbug run --testRunId 7061cec132069f98d8f4cbacd423de8d02ae551f --api-token ${{ secrets.BUGBUG_API_TOKEN }} --reporter junit --output-path report.xml
+        env:
+          BUGBUG_API_TOKEN: ${{ secrets.BUGBUG_API_TOKEN }}
 
       - name: Upload Test Report
         if: always()
