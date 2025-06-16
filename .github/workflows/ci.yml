@@ -21,7 +21,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '20'
 
       - name: Run BugBug Cloud Runner
         id: run-bugbug-tests
@@ -30,6 +30,19 @@ jobs:
           apiToken: ${{ secrets.BUGBUG_API_TOKEN }}
           testId: 08fb6a17-6aaf-4e87-b09e-dfcdf2f72c4b
           suiteId: 761dcb27-8538-47f5-8f3a-b59a2885f548
+          reporter: junit
+          outputPath: ./report.xml
+
+      - name: Debug Report File
+        run: |
+          ls -la
+          echo "Checking for report.xml in $(pwd)"
+          if [ -f "./report.xml" ]; then
+            echo "Report found!"
+          cat ./report.xml
+          else  
+            echo "Report not found! Check BugBug action logs for errors."
+          fi
 
       - name: Getting Run Output
         run: |
@@ -41,4 +54,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: bugbug-test-report
-          path: report.xml
+          path: ./report.xml
