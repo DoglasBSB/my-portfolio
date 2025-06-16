@@ -1,0 +1,41 @@
+name: CI/CD Pipeline with BugBug
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install BugBug CLI
+        run: npm install -g @bugbug/cli
+
+      - name: Run BugBug Tests
+        run: bugbug run --testRunId <08fb6a17-6aaf-4e87-b09e-dfcdf2f72c4b> --api-token ${{ secrets.BUGBUG_API_TOKEN }} --reporter junit --output-path report.xml
+        env:
+          BUGBUG_API_TOKEN: ${{ secrets.BUGBUG_API_TOKEN }}
+
+      - name: Upload Test Report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: bugbug-test-report
+          path: report.xml
+
+ 
+
+     
