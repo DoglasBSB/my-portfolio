@@ -30,8 +30,6 @@ jobs:
           apiToken: ${{ secrets.BUGBUG_API_TOKEN }}
           testId: 08fb6a17-6aaf-4e87-b09e-dfcdf2f72c4b
           suiteId: 761dcb27-8538-47f5-8f3a-b59a2885f548
-          reporter: junit
-          outputPath: ./report.xml
 
       - name: Debug Report File
         run: |
