@@ -11,7 +11,6 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -25,7 +24,7 @@ jobs:
         run: npm install -g @bugbug/cli
 
       - name: Run BugBug Tests
-        run: bugbug run --testRunId <08fb6a17-6aaf-4e87-b09e-dfcdf2f72c4b> --api-token ${{ secrets.BUGBUG_API_TOKEN }} --reporter junit --output-path report.xml
+        run: bugbug run --testRunId 08fb6a17-6aaf-4e87-b09e-dfcdf2f72c4b --api-token ${{ secrets.BUGBUG_API_TOKEN }} --reporter junit --output-path report.xml
         env:
           BUGBUG_API_TOKEN: ${{ secrets.BUGBUG_API_TOKEN }}
 
@@ -35,7 +34,3 @@ jobs:
         with:
           name: bugbug-test-report
           path: report.xml
-
- 
-
-     
